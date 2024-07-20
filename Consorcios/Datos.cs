@@ -8,30 +8,44 @@ namespace Consorcios
 {
     internal class Datos
     {
-        public struct UnidadFuncional { 
-            public Int32 IdUF; 
-            public String Alias;
-            public String Propietario;
-            public String Ocupante;
-            public Int32 piso;
-            public String Unidad;
-            public Decimal Saldo;
-            public Boolean ExpB;
+        public struct UnidadFuncional
+        {
+            public int ID { get; set; }
+            public string Nombre { get; set; }
+            public string Alias { get; set; }
+            public string Propietario { get; set; }
+            public decimal Saldo { get; set; }
+
+            public UnidadFuncional(int id, string nombre, string alias, string propietario, decimal saldo)
+            {
+                ID = id;
+                Nombre = nombre;
+                Alias = alias;
+                Propietario = propietario;
+                Saldo = saldo;
+            }
         }
 
-        public class Consorcio
+
+
+        public struct Edificio
         {
-            public Int32 IndEdif;
-            public Int32 CantidadUF;
-            public String Alias;
-            public String Direccion;
-            public String Categoria;
-            public List<UnidadFuncional> UnidadesFuncionales  = new List<UnidadFuncional>();
+            public int ID { get; set; }
+            public string Nombre { get; set; }
+            public string Direccion { get; set; }
+            public List<UnidadFuncional> UnidadesFuncionales { get; set; }
+            public int CantUF { get; set; }
+
+            public Edificio(int id, string nombre, string direccion, List<UnidadFuncional> unidadesFuncionales, int cantidadUF)
+            {
+                ID = id;
+                Nombre = nombre;
+                Direccion = direccion;
+                UnidadesFuncionales = unidadesFuncionales;
+                CantUF = cantidadUF; // para usar de índice
+            }
         }
 
         
-        public static Int32 IndEdifTotal;
-        public static UnidadFuncional[] Edificio = new UnidadFuncional[100]; // Edificio = lista de UF
-        public static Consorcio[] Edificios = new Consorcio[100];     // Edificios = lista de Consorcios
     }
 }
