@@ -16,31 +16,12 @@ namespace Consorcios
         {
             InitializeComponent();
         }
-        Int32 ID = 0;
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+
+
+        private void btnGuardar_Click_1(object sender, EventArgs e)
         {
-            Datos.Consorcio nuevoConsorcio = new Datos.Consorcio
-            {
-                Alias = txtNombre.Text;
+            Datos.CrearConsorcio(txtNombre.Text, txtDireccion.Text, Convert.ToInt32(txtCantUF.Text)); //parece que anda, hacer listad para comfirmar
         }
-
-
-             
-            nuevoConsorcio.IndEdif = Datos.IndEdifTotal;
-            nuevoConsorcio.Alias = txtNombre.Text;
-            nuevoConsorcio.Direccion = txtDireccion.Text;
-            nuevoConsorcio.CantidadUF = Convert.ToInt32(txtCantUF.Text);
-            nuevoConsorcio.Categoria = txtCategoria.Text;
-              
-            MessageBox.Show("Edificio cargado!");
-            txtCategoria.Text = "";
-            txtCantUF.Text = "";
-            txtDireccion.Text = "";
-            txtNombre.Text = "";
-            Datos.IndEdifTotal++;
-        }
-
-        
     }
 }

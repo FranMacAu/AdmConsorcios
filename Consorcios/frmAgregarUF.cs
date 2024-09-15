@@ -21,16 +21,7 @@ namespace Consorcios
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Int32 IND = cmbConsorcios.SelectedIndex;
-            Datos.Edificio[IND].IdUF = IndUF;
-            Datos.Edificio[IND].Alias = txtAlias.Text;
-            Datos.Edificio[IND].Propietario = txtProp.Text;
-            Datos.Edificio[IND].Ocupante = txtOcup.Text;
-            Datos.Edificio[IND].piso = Convert.ToInt32(txtPiso.Text);
-            Datos.Edificio[IND].Unidad = txtUnidad.Text;
-            Datos.Edificio[IND].ExpB = rdbExpB.Checked;
-            Datos.Edificio[IND].Saldo = 0;
-            IndUF++;
+            //Datos.CrearConsorcio(txt)
 
             MessageBox.Show("Datos cargados!");
 
@@ -45,10 +36,10 @@ namespace Consorcios
 
         private void frmAgregarUF_Load(object sender, EventArgs e)
         {
-            for (Int32 i = 0; i<Datos.Edificios.Length; i++)
-            {
-                cmbConsorcios.Items.Add(Datos.Edificios[i].Alias);
-            }
+            //for (Int32 i = 0; i<Datos.Edificios.Length; i++)
+            //{
+            //    cmbConsorcios.Items.Add(Datos.Edificios[i].Alias);
+            //}
         }
     }
 }
